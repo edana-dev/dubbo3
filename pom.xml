@@ -180,6 +180,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -214,10 +215,33 @@
                     <forkMode>once</forkMode>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
-
-
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>jianke-release</id>
+            <name>Jianke Release Repo</name>
+            <url>http://maven.jianke.com/repository/jianke-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>jianke-snapshot</id>
+            <name>Jianke Snapshot Repo</name>
+            <url>http://maven.jianke.com/repository/jianke-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <issueManagement>
         <system>github</system>
