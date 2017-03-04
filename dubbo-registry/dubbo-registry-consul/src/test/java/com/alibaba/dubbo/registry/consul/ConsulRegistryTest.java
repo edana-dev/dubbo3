@@ -29,9 +29,9 @@ public class ConsulRegistryTest {
     String service = "com.alibaba.dubbo.test.injvmServie";
     //"consul://127.0.0.1:8500/com.alibaba.dubbo.registry.RegistryService?interface=com.alibaba.dubbo.registry.RegistryService"
     URL registryUrl = URL.valueOf("consul://localhost:8500");
-    //"dubbo://192.168.11.1:20880/com.alibaba.dubbo.test.injvmServie?anyhost=true&application=dubbo-uic-provider&dubbo=3.0.0-SNAPSHOT&generic=false&interface=org.mvnsearch.uic.UicTemplate&methods=findById&pid=28893&realport=20880&side=provider&threads=200&timestamp=1479892263598"
+    //"dubbo://192.168.11.1:20880/com.alibaba.dubbo.test.injvmServie?anyhost=true&application=dubbo-uic-provider&dubbo=promoAudits&generic=false&interface=org.mvnsearch.uic.UicTemplate&methods=findById&pid=28893&realport=20880&side=provider&threads=200&timestamp=1479892263598"
     URL serviceUrl = URL.valueOf("dubbo://192.168.11.1:20880/" + service + "?notify=false&methods=test1,test2");
-    // consumer://192.168.11.1/com.alibaba.dubbo.test.injvmServie?application=dubbo-uic-consumer&category=consumers&check=false&dubbo=3.0.0-SNAPSHOT&interface=org.mvnsearch.uic.UicTemplate&methods=findById&pid=29084&side=consumer&timeout=3000&timestamp=1479892383523
+    // consumer://192.168.11.1/com.alibaba.dubbo.test.injvmServie?application=dubbo-uic-consumer&category=consumers&check=false&dubbo=promoAudits&interface=org.mvnsearch.uic.UicTemplate&methods=findById&pid=29084&side=consumer&timeout=3000&timestamp=1479892383523
     URL consumerUrl = URL.valueOf("consumer://192.168.11.1/" + service + "?notify=false&methods=test1,test2");
     ConsulRegistry registry = new ConsulRegistry(registryUrl);
 
